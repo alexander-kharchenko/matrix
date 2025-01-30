@@ -1,5 +1,10 @@
 import { createContext, FC, ReactNode, useState } from "react";
-import { createRows, createRow, findClosest } from "../helpers/utils";
+import {
+  getRandomNumber,
+  createRows,
+  createRow,
+  findClosest,
+} from "../helpers/utils";
 import { Row, MatrixContextProps } from "../helpers/types";
 
 export const MatrixContext = createContext<Partial<MatrixContextProps>>({});
@@ -7,7 +12,9 @@ export const MatrixContext = createContext<Partial<MatrixContextProps>>({});
 export const MatrixContextProvider: FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [rows, setRows] = useState<Row[]>(() => createRows(3, 4));
+  const [rows, setRows] = useState<Row[]>(() =>
+    createRows(getRandomNumber(0, 100), getRandomNumber(0, 100)),
+  );
   const [closestNumbers, setClosestNumbers] = useState<number[]>([]);
 
   const addRow = () => {
