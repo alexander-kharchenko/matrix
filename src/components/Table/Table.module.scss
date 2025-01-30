@@ -1,0 +1,13 @@
+.table {
+  border-collapse: collapse;
+  color: #ffffff;
+
+  td {
+    min-width: 50px;
+    border: 1px solid #ffffff;
+    padding: 10px 0;
+    font-size: 14px;
+    text-align: center;
+    transition: all 0.3s;
+  }
+}
