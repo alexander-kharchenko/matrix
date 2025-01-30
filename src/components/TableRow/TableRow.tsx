@@ -37,9 +37,11 @@ function TableRow({ row }: TableRowProps) {
       >
         {sum}
       </td>
-      <button className={styles.deleteButton} onClick={handleDeleteRow}>
-        <TrashIcon />
-      </button>
+      <td>
+        <button className={styles.deleteButton} onClick={handleDeleteRow}>
+          <TrashIcon />
+        </button>
+      </td>
     </tr>
   );
 }
